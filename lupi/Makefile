@@ -24,6 +24,7 @@ include $(TOPDIR)/rules.mk
 include $(INCLUDE_DIR)/kernel.mk
 
 PKG_NAME:=lupi
+PKG_VERSION:=0.1
 PKG_RELEASE:=1
 PKG_BUILD_DIR:=$(BUILD_DIR)/$(PKG_NAME)
 
@@ -31,8 +32,8 @@ include $(INCLUDE_DIR)/package.mk
 
 define Package/lupi
   TITLE:=Lua unified programming interface
-  SECTION:=basic
-  CATEGORY:=basic
+  SECTION:=base
+  CATEGORY:=Base system
   URL:=http://qmp.cat
   DEPENDS:=
 endef
