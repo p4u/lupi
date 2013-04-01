@@ -25,6 +25,8 @@
 --! @brief networking functions
 
 model = require "lupi.model"
+util = require "lupi.util"
+wifi = require "lupi.wifi"
 model.set_file('network')
 
 network = {}
@@ -34,14 +36,17 @@ network = {}
 --! @param name	UCI section name
 --! @param iface interface
 function network.add_if(name, iface)
-	model.set_file('wireless')
-	model.add_type('wifi-iface', {'network' = name})
-
-	model.set_file('network')
-	model.add('interface', name)
-	model.set(name, 'proto', 'none')
-	model.set(name, 'ifname', iface)
-	model.apply()
+	if wifi.info.isWifi(iface) then
+		-- TODO check if the iface already exist and attach it to the network
+		model.set_file('wireless')
+		model.add_type('wifi-iface', {'device' = iface, 'network' = name})
+	else
+		model.set_file('network')
+		model.add('interface', name)
+		model.set(name, 'proto', 'none')
+		model.set(name, 'ifname', iface)
+		model.apply()
+	end
 end
 
 --! @brief Add a bridge [by default proto = none]

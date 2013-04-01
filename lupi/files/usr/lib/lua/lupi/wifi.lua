@@ -46,10 +46,14 @@ function wifi.apply(dev)
 end
 
 function wifi.info.modes(dev)
-        local modes = {}
-        local iw = iwinfo[iwinfo.type(dev)]
-        if iw ~= nil then modes = iw.hwmodelist(dev) end
-        return modes
+	local modes = {}
+	local iw = iwinfo[iwinfo.type(dev)]
+	if iw ~= nil then modes = iw.hwmodelist(dev) end
+	return modes
 end
 
-
+function wifi.info.isWifi(dev)
+	local iw = iwinfo[iwinfo.type(dev)]
+	if iw == nil then return false end
+	return true
+end
