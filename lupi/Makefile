@@ -35,7 +35,7 @@ define Package/lupi
   SECTION:=base
   CATEGORY:=Base system
   URL:=http://qmp.cat
-  DEPENDS:=
+  DEPENDS:= luci-lib-web luci-lib-sys luci-lib-json luci-lib-core luci-lib-ipkg lua libiwinfo-lua luasocket 
 endef
 
 define Package/lupi/description
