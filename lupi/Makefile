@@ -38,7 +38,7 @@ define Package/lupi
 endef
 
 define Package/lupi/description
- Lua unified programming interface is a set of libraries for control and monitorize the OpenWRT system
+	Lua unified programming interface is a set of libraries for control and monitorize the OpenWRT system
 endef
 
 define Package/lupi/conffiles
