@@ -34,8 +34,8 @@ define Package/lupi
   TITLE:=Lua unified programming interface
   SECTION:=base
   CATEGORY:=Base system
-  URL:=http://qmp.cat
-  DEPENDS:= luci-lib-web luci-lib-sys luci-lib-json luci-lib-core luci-lib-ipkg lua libiwinfo-lua luasocket 
+  URL:=http://libre-mesh.org
+  DEPENDS:=+luci-lib-json +luci-lib-core +libiwinfo-lua +luci-lib-nixio +luasocket +lua
 endef
 
 define Package/lupi/description
